@@ -1,4 +1,3 @@
-![img](./static/banner.png)
 <div align="center">
 
 English | [简体中文](README_zh-CN.md)
