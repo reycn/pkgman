@@ -14,6 +14,8 @@ English | [简体中文](README_zh-CN.md)
     <img src="https://img.shields.io/badge/Telegram-2CA5E0?style=flat-squeare&logo=telegram&logoColor=white"/></a>
 </p>
 
+</div>
+
 The easiest way of auto installing and importing many libraries in Python. Inspired by [`pacman`](https://www.rdocumentation.org/packages/pacman/versions/0.5.1) in R
 
 ## Features
