@@ -1,11 +1,10 @@
 from importlib import import_module
 from subprocess import check_call
 from sys import _getframe, executable
-from time import sleep
 
 
-def include(packages: str | list = None):
-    if packages is None:
+def include(packages: str | list = ""):
+    if packages is None or packages == "":
         packages = []
         print("[pkgman] no packages are given, skipped.")
     elif isinstance(packages, str):
