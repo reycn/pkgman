@@ -1,0 +1,30 @@
+[project]
+name = "pkgman"
+
+description = "Install and import all packages in two lines."
+
+version = "0.1.0"
+
+license = "MIT"
+
+readme = "README.md"
+
+requires-python = ">=3.8"
+
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+
+authors = [
+    {name = "Rongxin", email = "rongxin@u.nus.edu"},
+]
+
+
+[project.urls]
+Homepage = "https://github.com/reycn/pkgman"
+
+
+[project.scripts]
+pkgman = "pkgman.pkgman:__init__"
