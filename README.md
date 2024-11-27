@@ -1,4 +1,9 @@
 ![img](./static/banner.png)
+<div align="center">
+
+English | [简体中文](README_zh-CN.md)
+![img](./static/banner.png)
+# Package Man
 <p>
   <!-- PyPI -->
   <a href="https://pypi.org/project/pkgman/">
@@ -10,8 +15,7 @@
     <img src="https://img.shields.io/badge/Telegram-2CA5E0?style=flat-squeare&logo=telegram&logoColor=white"/></a>
 </p>
 
-The easiest way of auto installing and importing many libraries in Python.  
-Inspired by [`pacman`](https://www.rdocumentation.org/packages/pacman/versions/0.5.1) in R
+The easiest way of auto installing and importing many libraries in Python. Inspired by [`pacman`](https://www.rdocumentation.org/packages/pacman/versions/0.5.1) in R
 
 ## Features
 
