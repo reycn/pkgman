@@ -1,7 +1,7 @@
 <div align="center">
 
 English | [简体中文](README_zh-CN.md)
-![img](./static/banner.png)
+![img](./example/static/banner.png)
 # Package Man
 <p>
   <!-- PyPI -->

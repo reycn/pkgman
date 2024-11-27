@@ -5,7 +5,6 @@ description = "Install and import all packages in two lines."
 
 version = "0.1.0"
 
-license = "MIT"
 
 readme = "README.md"
 
