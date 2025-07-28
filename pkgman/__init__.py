@@ -1,7 +1,7 @@
 '''
 Date: 2024-11-27 18:39:30
 LastEditors: Rongxin rongxin@u.nus.edu
-LastEditTime: 2025-07-28 17:38:16
+LastEditTime: 2025-07-28 17:55:23
 FilePath: /pkgman/pkgman/__init__.py
 '''
 from importlib import import_module
@@ -12,7 +12,9 @@ from sys import _getframe, executable
 def include(*args):
     if args is None or args == "" or len(args) == 0:
         print("[pkgman] no packages are given, skipped.")
-    elif (isinstance(args, list) or isinstance(args, tuple)) and len(args) == 1:
+    elif (
+        (isinstance(args, list) or isinstance(args, tuple))
+            and len(args) == 1):
         package_name = args[0]
         try:
             module = import_module(package_name)
@@ -22,7 +24,9 @@ def include(*args):
             return True
         except ImportError:
             print(f"[pkgman] Installing package(s) [{package_name}]...")
-            check_call([executable, "-m", "pip", "install", "-q", package_name])
+            check_call(
+                [executable, "-m", "pip", "install", "-q", package_name]
+            )
             try:
                 module = import_module(package_name)
                 caller_globals = _getframe(1).f_globals
@@ -33,7 +37,10 @@ def include(*args):
                 return False
         except Exception:
             return False
-    elif (isinstance(args, list) and len(args) > 1) or (isinstance(args, tuple) and len(args) > 1):
+    elif (
+            (isinstance(args, list) and len(args) > 1)
+            or (isinstance(args, tuple) and len(args) > 1)
+    ):
         result_list = []
         for package_name in args:
             try:
@@ -43,7 +50,9 @@ def include(*args):
                 result_list.append(True)
             except ImportError:
                 print(f"[pkgman] Installing and importing {args}...")
-                check_call([executable, "-m", "pip", "install", "-q", package_name])
+                check_call(
+                    [executable, "-m", "pip", "install", "-q", package_name]
+                )
                 try:
                     module = import_module(package_name)
                     caller_globals = _getframe(1).f_globals
@@ -52,7 +61,9 @@ def include(*args):
                 except ImportError:
                     result_list.append(False)
             except Exception as e:
-                print(f"[pkgman] Error in installing package {package_name}:\n{e}")
+                print(
+                    f"[pkgman] Error in installing {package_name}:\n{e}"
+                )
                 result_list.append(False)
         # If all results are True
         if result_list:
