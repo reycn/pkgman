@@ -1,7 +1,7 @@
 <!--
  * @Date: 2024-11-27 18:38:36
  * @LastEditors: Rongxin rongxin@u.nus.edu
- * @LastEditTime: 2025-07-28 17:44:50
+ * @LastEditTime: 2025-07-28 17:46:42
  * @FilePath: /pkgman/README.md
 -->
 <div align="center">
@@ -31,6 +31,7 @@ The easiest way of auto installing and importing many libraries in Python. Inspi
 - 👶 Ease-of-use at the baby level
 
 ## Recent updates
+- `2025-07-28` Add support for variadic arguments
 - `2024-11-27` Initialized, supporting installing a single package and a list of packages
 
 ## Installation
