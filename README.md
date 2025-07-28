@@ -1,13 +1,13 @@
 <!--
  * @Date: 2024-11-27 18:38:36
  * @LastEditors: Rongxin rongxin@u.nus.edu
- * @LastEditTime: 2025-07-28 17:46:42
+ * @LastEditTime: 2025-07-28 17:48:03
  * @FilePath: /pkgman/README.md
 -->
 <div align="center">
 
 English | [简体中文](README_zh-CN.md)
-![img](./example/static/banner.png)
+![img](https://github.com/reycn/pkgman/blob/main/example/static/banner.png)
 # Package Man
 <p>
   <!-- PyPI -->
