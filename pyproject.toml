@@ -3,7 +3,7 @@ name = "pkgman"
 
 description = "Install and import all packages in two lines."
 
-version = "0.1.0"
+version = "0.1.1"
 
 
 readme = "README.md"
