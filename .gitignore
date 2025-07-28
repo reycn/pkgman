@@ -1,4 +1,7 @@
 # Customized
+.DS_Store
+*/.DS_Store
+.idea
 .vscode
 test/
 tmp/

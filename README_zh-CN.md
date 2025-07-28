@@ -34,7 +34,6 @@ Python 中最简单的方式用于自动安装和导入多个库。灵感来源�
 只需两行代码安装并导入一堆库：
 - 单个模块
     ```Python
-
     from pkgman import include
     include("numpy")
     ```
@@ -42,9 +41,15 @@ Python 中最简单的方式用于自动安装和导入多个库。灵感来源�
 - 多个模块
 
     ```Python
-
     from pkgman import include
     include(["numpy", "pandas"])
+    ```
+
+    或者直接使用可变参数，不用加上列表的前后括号 (`[列表]`)：
+
+    ```Python
+    from pkgman import include
+    include("numpy", "pandas")
     ```
 然后，所有库都会被导入；如果未安装，将先安装再导入。
 

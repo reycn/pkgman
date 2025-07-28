@@ -1,16 +1,19 @@
+'''
+Date: 2024-11-27 18:39:30
+LastEditors: Rongxin rongxin@u.nus.edu
+LastEditTime: 2025-07-28 17:38:16
+FilePath: /pkgman/pkgman/__init__.py
+'''
 from importlib import import_module
 from subprocess import check_call
 from sys import _getframe, executable
 
 
-def include(packages: str | list = ""):
-    if packages is None or packages == "":
-        packages = []
+def include(*args):
+    if args is None or args == "" or len(args) == 0:
         print("[pkgman] no packages are given, skipped.")
-    elif isinstance(packages, str):
-
-        package_name = packages
-
+    elif (isinstance(args, list) or isinstance(args, tuple)) and len(args) == 1:
+        package_name = args[0]
         try:
             module = import_module(package_name)
             caller_globals = _getframe(1).f_globals
@@ -30,17 +33,16 @@ def include(packages: str | list = ""):
                 return False
         except Exception:
             return False
-    elif isinstance(packages, list):
+    elif (isinstance(args, list) and len(args) > 1) or (isinstance(args, tuple) and len(args) > 1):
         result_list = []
-
-        print(f"[pkgman] Installing and importing {packages}...")
-        for package_name in packages:
+        for package_name in args:
             try:
                 module = import_module(package_name)
                 caller_globals = _getframe(1).f_globals
                 caller_globals[package_name] = module
                 result_list.append(True)
             except ImportError:
+                print(f"[pkgman] Installing and importing {args}...")
                 check_call([executable, "-m", "pip", "install", "-q", package_name])
                 try:
                     module = import_module(package_name)
@@ -54,7 +56,7 @@ def include(packages: str | list = ""):
                 result_list.append(False)
         # If all results are True
         if result_list:
-            print(f"[pkgman] {len(packages)} packages have been imported.")
+            print(f"[pkgman] {len(args)} packages have been imported.")
             return True
         else:
             print("[pkgman] Errors occured in installing some of packages.")
@@ -66,15 +68,15 @@ def include(packages: str | list = ""):
 if __name__ == "__main__":
     include(["numpy", "pandas"])
 
-    print(
-        len(pandas.DataFrame()),
-        numpy.mean(
-            [
-                1,
-                5,
-                6,
-                7,
-                8,
-            ]
-        ),
-    )
+    # print(
+    #     len(pandas.DataFrame()),
+    #     numpy.mean(
+    #         [
+    #             1,
+    #             5,
+    #             6,
+    #             7,
+    #             8,
+    #         ]
+    #     ),
+    # )

@@ -1,3 +1,9 @@
+<!--
+ * @Date: 2024-11-27 18:38:36
+ * @LastEditors: Rongxin rongxin@u.nus.edu
+ * @LastEditTime: 2025-07-28 17:44:50
+ * @FilePath: /pkgman/README.md
+-->
 <div align="center">
 
 English | [简体中文](README_zh-CN.md)
@@ -35,7 +41,6 @@ The easiest way of auto installing and importing many libraries in Python. Inspi
 Install and import a bunch of libraries using two lines:
 - A single module
     ```Python
-
     from pkgman import include
     include("numpy")
     ```
@@ -43,9 +48,15 @@ Install and import a bunch of libraries using two lines:
 - Many modules
 
     ```Python
-
     from pkgman import include
     include(["numpy", "pandas"])
+    ```
+
+    Or simply use *variadic arguments* without the parentheses (`[list]`) of the list
+
+    ```Python
+    from pkgman import include
+    include("numpy", "pandas")
     ```
 Then, all of them will be imported; and if not installed, installed and imported.
 
